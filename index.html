@@ -77,7 +77,8 @@
       linear-gradient(180deg, rgba(11,18,32,0.55) 0%, rgba(11,18,32,0.75) 55%, var(--bg) 100%),
       url('assets/hero-night.jpg');
     background-size:cover;
-    background-position:center 65%;
+    background-position:center center;
+    background-repeat:no-repeat;
   }
   .patrol-light{
     position:absolute; inset:-20%;
@@ -157,10 +158,15 @@
   }
 
   @media (max-width:700px){
-    .hero{ min-height:auto; padding:116px 20px 80px; }
-    .hero h1{ font-size:clamp(36px, 10vw, 56px); }
-    .hero p{ font-size:15px; margin-top:20px; }
-    .hero-actions{ flex-direction:column; align-items:stretch; margin-top:28px; }
+    .hero{
+      min-height:100svh;
+      padding:96px 20px 44px;
+      justify-content:flex-start;
+    }
+    .hero-eyebrow{ margin-bottom:16px; }
+    .hero h1{ font-size:clamp(30px, 8.2vw, 44px); line-height:0.98; max-width:100%; }
+    .hero p{ font-size:14px; margin-top:16px; max-width:100%; }
+    .hero-actions{ flex-direction:column; align-items:stretch; gap:12px; margin-top:24px; }
     .hero-actions a{ text-align:center; }
     section{ padding:90px 20px; }
     .section-head{ margin-bottom:40px; }
@@ -282,7 +288,7 @@
   <div class="section-head">
     <div class="eyebrow mono">Contact</div>
     <h2>Ready when you are.</h2>
-    <p>Tell us what needs cleaning. We'll come back with a quote and a time, usually within 24 hours.</p>
+    <p>Tell us what needs cleaning. We'll come back with a quote and a time.</p>
   </div>
 
   <div class="contact-wrap">
