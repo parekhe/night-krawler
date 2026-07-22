@@ -151,11 +151,29 @@
   .card p{ color:var(--muted); font-size:14.5px; }
   .card .tag{ font-size:11px; color:var(--amber); margin-bottom:16px; display:block; }
 
+  @media (max-width:900px){
+    nav{ padding:16px 20px; flex-wrap:wrap; gap:12px; }
+    .nav-links{ width:100%; order:3; justify-content:center; gap:20px; }
+  }
+
   @media (max-width:700px){
-    .grid{ grid-template-columns:repeat(2, 1fr); }
+    .hero{ min-height:auto; padding:116px 20px 80px; }
+    .hero h1{ font-size:clamp(36px, 10vw, 56px); }
+    .hero p{ font-size:15px; margin-top:20px; }
+    .hero-actions{ flex-direction:column; align-items:stretch; margin-top:28px; }
+    .hero-actions a{ text-align:center; }
+    section{ padding:90px 20px; }
+    .section-head{ margin-bottom:40px; }
+    .section-head p{ font-size:15px; }
+    .grid{ grid-template-columns:1fr; }
     .card{ padding:22px 16px; }
     .card h3{ font-size:16px; }
     .card p{ font-size:12.5px; }
+    .contact-wrap{ grid-template-columns:1fr; gap:32px; }
+    .contact-info .row span.value{ font-size:18px; }
+    .mode-toggle{ flex-direction:column; }
+    .mode-toggle button{ width:100%; }
+    footer{ padding:24px 20px; flex-direction:column; align-items:flex-start; }
   }
 
   /* ---------- CONTACT ---------- */
@@ -364,7 +382,7 @@
         body: new FormData(enquiryForm)
       });
       if (response.ok) {
-        alert('Thanks — we\'ll be in touch within 24 hours.');
+        alert('Thanks — we\'ll be in touch with you soon.');
         enquiryForm.reset();
         setEnquiryMode('Send Enquiry');
       } else {
