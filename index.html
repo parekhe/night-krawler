@@ -66,8 +66,8 @@
   .footer-logo{ height:30px; width:auto; display:block; }
   .footer-brand{ display:flex; align-items:center; gap:10px; }
 
-  /* ---------- HERO ---------- */
-  .hero{
+  /* ---------- melb ---------- */
+  .melb{
     position:relative;
     min-height:100vh;
     display:flex; flex-direction:column; justify-content:center;
@@ -75,7 +75,7 @@
     overflow:hidden;
     background-image:
       linear-gradient(180deg, rgba(11,18,32,0.55) 0%, rgba(11,18,32,0.75) 55%, var(--bg) 100%),
-      url('assets/hero-night.jpg');
+      url('assets/melb-night.jpg');
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
@@ -90,25 +90,25 @@
     0%,100%{ --mx:15%; --my:25%; }
     50%{ --mx:65%; --my:55%; }
   }
-  .hero-eyebrow{
+  .melb-eyebrow{
     font-size:12px; color:var(--amber); margin-bottom:22px;
     display:flex; align-items:center; gap:10px;
   }
-  .hero-eyebrow .dot{
+  .melb-eyebrow .dot{
     width:7px; height:7px; border-radius:50%; background:var(--amber);
     box-shadow:0 0 10px 2px var(--amber);
     animation:pulse 2s ease-in-out infinite;
   }
   @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.35;} }
-  .hero h1{
+  .melb h1{
     font-size:clamp(48px, 9vw, 108px);
     max-width:920px;
   }
-  .hero h1 em{ font-style:normal; color:var(--amber); }
-  .hero p{
+  .melb h1 em{ font-style:normal; color:var(--amber); }
+  .melb p{
     margin-top:26px; max-width:520px; font-size:17px; color:var(--muted);
   }
-  .hero-actions{ display:flex; gap:16px; margin-top:40px; flex-wrap:wrap; }
+  .melb-actions{ display:flex; gap:16px; margin-top:40px; flex-wrap:wrap; }
   .btn-primary{
     background:var(--amber); color:#1a1200; font-weight:700;
     padding:15px 30px; font-size:14px; border-radius:2px;
@@ -158,16 +158,16 @@
   }
 
   @media (max-width:700px){
-    .hero{
+    .melb{
       min-height:100svh;
       padding:96px 20px 44px;
       justify-content:center;
     }
-    .hero-eyebrow{ margin-bottom:16px; }
-    .hero h1{ font-size:clamp(30px, 8.2vw, 44px); line-height:0.98; max-width:100%; }
-    .hero p{ font-size:14px; margin-top:16px; max-width:100%; }
-    .hero-actions{ flex-direction:column; align-items:stretch; gap:12px; margin-top:24px; }
-    .hero-actions a{ text-align:center; }
+    .melb-eyebrow{ margin-bottom:16px; font-size:13px; }
+    .melb h1{ font-size:clamp(34px, 9.2vw, 48px); line-height:0.98; max-width:100%; }
+    .melb p{ font-size:15px; margin-top:16px; max-width:100%; }
+    .melb-actions{ flex-direction:column; align-items:stretch; gap:12px; margin-top:24px; }
+    .melb-actions a{ text-align:center; font-size:11px; padding:10px 14px; }
     section{ padding:90px 20px; }
     .section-head{ margin-bottom:40px; }
     .section-head p{ font-size:15px; }
@@ -227,7 +227,7 @@
   footer .mono{ font-size:11px; color:var(--muted); }
 
   @media (prefers-reduced-motion: reduce){
-    .patrol-light, .hero-eyebrow .dot{ animation:none; }
+    .patrol-light, .melb-eyebrow .dot{ animation:none; }
   }
 </style>
 </head>
@@ -242,12 +242,11 @@
   <a href="#top"><img class="nav-logo" src="assets/logo.png" alt="Night Krawler Cleaning logo"></a>
 </nav>
 
-<header class="hero" id="top">
+<header class="melb" id="top">
   <div class="patrol-light" id="patrolLight"></div>
-  <div class="hero-eyebrow"><span class="dot"></span> <span class="mono">After hours · On the job</span></div>
+  <div class="melb-eyebrow"><span class="dot"></span> <span class="mono">After hours · On the job</span></div>
   <h1>We make it <em>shine </em><br>the <em>brightest </em>at night. </h1>
-  <p>Offices, airbnbs, homes, cleaned properly, the first time. One crew, working the hours nobody else will.</p>
-  <div class="hero-actions">
+  <div class="melb-actions">
     <a href="#contact" class="btn-primary" id="bookNowBtn">Book now</a>
     <a href="#contact" class="btn-ghost" id="getQuoteBtn">Get a free quote</a>
     <a href="#services" class="btn-ghost" >Our Services</a>
@@ -331,18 +330,18 @@
 </footer>
 
 <script>
-  // Signature element: hero spotlight follows the cursor, like a torch on patrol.
-  const hero = document.querySelector('.hero');
+  // Signature element: melb spotlight follows the cursor, like a torch on patrol.
+  const melb = document.querySelector('.melb');
   const light = document.getElementById('patrolLight');
-  hero.addEventListener('mousemove', (e) => {
-    const rect = hero.getBoundingClientRect();
+  melb.addEventListener('mousemove', (e) => {
+    const rect = melb.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
     light.style.setProperty('--mx', x + '%');
     light.style.setProperty('--my', y + '%');
     light.style.animation = 'none';
   });
-  hero.addEventListener('mouseleave', () => {
+  melb.addEventListener('mouseleave', () => {
     light.style.animation = 'drift 14s ease-in-out infinite';
   });
 
@@ -368,7 +367,7 @@
     btn.addEventListener('click', () => setEnquiryMode(btn.dataset.mode));
   });
 
-  // Hero buttons jump to the form and preset the toggle accordingly.
+  // melb buttons jump to the form and preset the toggle accordingly.
   document.getElementById('bookNowBtn').addEventListener('click', () => setEnquiryMode('Book Now'));
   document.getElementById('getQuoteBtn').addEventListener('click', () => setEnquiryMode('Send Enquiry'));
 
