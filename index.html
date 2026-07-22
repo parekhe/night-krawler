@@ -49,7 +49,9 @@
     position:fixed; top:0; left:0; right:0; z-index:50;
     display:flex; align-items:center; justify-content:space-between;
     padding:22px clamp(20px,5vw,64px);
-    background:linear-gradient(to bottom, rgba(11,18,32,0.9), transparent);
+    background:rgba(11,18,32,0);
+    backdrop-filter:none;
+    box-shadow:none;
   }
   .brand{ font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; }
   .brand span{ color:var(--amber); }
@@ -108,7 +110,7 @@
   .melb p{
     margin-top:26px; max-width:520px; font-size:17px; color:var(--muted);
   }
-  .melb-actions{ display:flex; gap:16px; margin-top:40px; flex-wrap:wrap; }
+  .melb-actions{ display:flex; gap:16px; margin-top:72px; flex-wrap:wrap; }
   .btn-primary{
     background:var(--amber); color:#1a1200; font-weight:700;
     padding:15px 30px; font-size:14px; border-radius:2px;
@@ -162,11 +164,13 @@
       min-height:100svh;
       padding:96px 20px 44px;
       justify-content:center;
+      background-position:center 24%;
+      background-size:118% auto;
     }
     .melb-eyebrow{ margin-bottom:16px; font-size:13px; }
     .melb h1{ font-size:clamp(34px, 9.2vw, 48px); line-height:0.98; max-width:100%; }
     .melb p{ font-size:15px; margin-top:16px; max-width:100%; }
-    .melb-actions{ flex-direction:column; align-items:stretch; gap:12px; margin-top:24px; }
+    .melb-actions{ flex-direction:column; align-items:stretch; gap:12px; margin-top:40px; }
     .melb-actions a{ text-align:center; font-size:11px; padding:10px 14px; }
     section{ padding:90px 20px; }
     .section-head{ margin-bottom:40px; }
@@ -184,15 +188,16 @@
 
   /* ---------- CONTACT ---------- */
   .contact-wrap{
-    display:grid; grid-template-columns:1fr 1fr; gap:60px;
+    display:grid; grid-template-columns:minmax(0,0.82fr) minmax(0,1.18fr); gap:22px;
+    align-items:start;
   }
   @media (max-width:800px){ .contact-wrap{ grid-template-columns:1fr; } }
   .contact-info .row{
-    display:flex; flex-direction:column; padding:20px 0;
+    display:flex; flex-direction:column; padding:12px 0;
     border-bottom:1px solid var(--panel-edge);
   }
-  .contact-info .row span.label{ font-size:12px; color:var(--moon); margin-bottom:6px; }
-  .contact-info .row span.value{ font-size:20px; }
+  .contact-info .row span.label{ font-size:11px; color:var(--moon); margin-bottom:4px; }
+  .contact-info .row span.value{ font-size:16px; }
 
   .mode-toggle{
     display:flex; background:var(--panel); border:1px solid var(--panel-edge);
@@ -200,23 +205,23 @@
   }
   .mode-toggle button{
     flex:1; background:transparent; border:none; color:var(--muted);
-    font-family:'IBM Plex Mono', monospace; font-size:12px; text-transform:uppercase;
-    letter-spacing:0.06em; padding:12px; border-radius:2px; cursor:pointer;
+    font-family:inherit; font-size:13px; font-weight:500; text-transform:uppercase;
+    letter-spacing:0.04em; padding:7px; border-radius:2px; cursor:pointer;
     transition:background .2s, color .2s;
   }
   .mode-toggle button.active{ background:var(--amber); color:#1a1200; font-weight:600; }
 
-  form{ display:flex; flex-direction:column; gap:14px; }
+  form{ display:flex; flex-direction:column; gap:7px; }
   input, textarea{
     background:var(--panel); border:1px solid var(--panel-edge); color:var(--text);
-    padding:16px; font-size:14px; border-radius:2px; font-family:inherit;
+    padding:9px; font-size:13px; border-radius:2px; font-family:inherit;
   }
   input:focus, textarea:focus{ outline:none; border-color:var(--amber); }
   textarea{ resize:vertical; min-height:100px; }
   button[type="submit"]{
     background:var(--amber); color:#1a1200; font-weight:700; border:none;
-    padding:16px; font-size:14px; text-transform:uppercase; letter-spacing:0.04em;
-    border-radius:2px; cursor:pointer; margin-top:6px;
+    padding:9px; font-size:13px; text-transform:uppercase; letter-spacing:0.04em;
+    border-radius:2px; cursor:pointer; margin-top:1px;
   }
 
   /* ---------- FOOTER ---------- */
